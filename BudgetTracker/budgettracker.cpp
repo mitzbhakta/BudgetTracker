@@ -1,12 +1,18 @@
-#include "budgettracker.h"
+// BudgetTracker.cpp : main project file.
 
-BudgetTracker::BudgetTracker(QWidget *parent, Qt::WFlags flags)
-	: QMainWindow(parent, flags)
+#include "stdafx.h"
+#include "MainWindow.h"
+
+using namespace BudgetTracker;
+
+[STAThreadAttribute]
+int main(array<System::String ^> ^args)
 {
-	ui.setupUi(this);
-}
+	// Enabling Windows XP visual effects before any controls are created
+	Application::EnableVisualStyles();
+	Application::SetCompatibleTextRenderingDefault(false); 
 
-BudgetTracker::~BudgetTracker()
-{
-
+	// Create the main window and run it
+	Application::Run(gcnew MainWindow());
+	return 0;
 }
