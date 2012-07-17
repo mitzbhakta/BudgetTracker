@@ -1,4 +1,4 @@
-﻿Build started 17/07/2012 13:12:16.
+﻿Build started 17/07/2012 13:40:19.
      1>Project "D:\My Documents\GitHub\BudgetTracker\BudgetTracker\BudgetTracker.vcxproj" on node 2 (build target(s)).
      1>InitializeBuildStatus:
          Touching "Debug\BudgetTracker.unsuccessfulbuild".
@@ -31,4 +31,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:02.84
+Time Elapsed 00:00:01.82
