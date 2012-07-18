@@ -1,4 +1,5 @@
 #pragma once
+#include "Database.h"
 
 namespace BudgetTracker {
 
@@ -8,6 +9,7 @@ namespace BudgetTracker {
 	using namespace System::Windows::Forms;
 	using namespace System::Data;
 	using namespace System::Drawing;
+	using namespace System::Data::SQLite;
 
 	/// <summary>
 	/// Summary for MainWindow
@@ -21,6 +23,8 @@ namespace BudgetTracker {
 			//
 			//TODO: Add the constructor code here
 			//
+			Database d;
+			SQLiteConnection ^ db = d.dbConnect("tstDB");
 		}
 
 	protected:
@@ -129,6 +133,7 @@ namespace BudgetTracker {
 			this->tabPage1->TabIndex = 0;
 			this->tabPage1->Text = L"tabPage1";
 			this->tabPage1->UseVisualStyleBackColor = true;
+			this->tabPage1->Click += gcnew System::EventHandler(this, &MainWindow::tabPage1_Click);
 			// 
 			// tabPage2
 			// 
@@ -190,6 +195,10 @@ namespace BudgetTracker {
 #pragma endregion
 	private: System::Void label1_Click(System::Object^  sender, System::EventArgs^  e) {
 			 }
+private: System::Void tabPage1_Click(System::Object^  sender, System::EventArgs^  e) 
+	{
+
+	}
 };
 }
 
