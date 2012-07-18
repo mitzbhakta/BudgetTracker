@@ -127,8 +127,9 @@ namespace BudgetTracker {
 			this->tabPage1->Padding = System::Windows::Forms::Padding(3);
 			this->tabPage1->Size = System::Drawing::Size(631, 395);
 			this->tabPage1->TabIndex = 0;
-			this->tabPage1->Text = L"tabPage1";
+			this->tabPage1->Text = L"My Account";
 			this->tabPage1->UseVisualStyleBackColor = true;
+			this->tabPage1->Click += gcnew System::EventHandler(this, &MainWindow::tabPage1_Click);
 			// 
 			// tabPage2
 			// 
@@ -190,6 +191,8 @@ namespace BudgetTracker {
 #pragma endregion
 	private: System::Void label1_Click(System::Object^  sender, System::EventArgs^  e) {
 			 }
+private: System::Void tabPage1_Click(System::Object^  sender, System::EventArgs^  e) {
+		 }
 };
 }
 
