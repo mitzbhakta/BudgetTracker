@@ -7,5 +7,6 @@ public:
 	Database(void);
 	SQLiteConnection ^ dbConnect(std::string dbName);
 	bool createInitialTables(SQLiteConnection ^db);
+	void Database::insertQuery(SQLiteConnection ^ db, std::string query);
 };
 

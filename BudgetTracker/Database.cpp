@@ -22,7 +22,6 @@ SQLiteConnection ^ Database::dbConnect(std::string dbName)
 	db->ConnectionString = dataSource;
 	db->Open();
 
-	
 	return db;
 }
 
@@ -33,7 +32,7 @@ bool Database::createInitialTables(SQLiteConnection ^ db)
 		SQLiteCommand ^cmdCreateTable = db->CreateCommand();
 		cmdCreateTable->CommandText = "CREATE TABLE USER (id INTEGER PRIMARY KEY, value STRING);";
 		cmdCreateTable->ExecuteNonQuery();
-		cmdCreateTable->CommandText = "CREATE TABLE entries(id INTEGER PRIMARY KEY, value STRING);";
+		cmdCreateTable->CommandText = "CREATE TABLE ENTRIES(id INTEGER PRIMARY KEY, value STRING);";
 		cmdCreateTable->ExecuteNonQuery();
 		return true;
 	} catch (int e)
@@ -42,3 +41,13 @@ bool Database::createInitialTables(SQLiteConnection ^ db)
 	
 	}
 }
+
+void Database::insertQuery(SQLiteConnection ^ db, std::string query) 
+{
+	SQLiteCommand ^cmdInsertValue = db->CreateCommand();
+	cmdInsertValue->CommandText = gcnew System::String(query.c_str());
+	cmdInsertValue->ExecuteNonQuery();
+
+}
+
+

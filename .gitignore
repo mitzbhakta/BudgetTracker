@@ -40,3 +40,10 @@ Thumbs.db
 *.sln
 *.sdf
 *.opensdf.suo
+*.obj
+*.pdb
+*.opensdf
+*.swp
+*.suo
+
+
